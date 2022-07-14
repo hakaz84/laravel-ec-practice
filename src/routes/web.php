@@ -13,4 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'ShopController@index');
+use App\Http\Controllers\ShopController;
+
+Route::get('/', [ShopController::class, 'index']);
+
+Route::get('/mycart', [ShopController::class, 'myCart']);
+
+

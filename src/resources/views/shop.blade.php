@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('content')
 <div class="container-fluid">
    <div class="">
@@ -8,6 +7,15 @@
            <div class="">
                <div class="d-flex flex-row flex-wrap">
                    商品一覧を出したい
+
+                   @foreach($stocks as $stock)
+                      {{$stock->name}} <br>
+                      {{$stock->fee}}円<br>
+                      <img src="/image/{{$stock->imgpath}}" alt="" class="incart" >
+                      <br>
+                      {{$stock->detail}} <br>
+                    @endforeach
+                    {{$stocks->links()}} 
                </div>
            </div>
        </div>
